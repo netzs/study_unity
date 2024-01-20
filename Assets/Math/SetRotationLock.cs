@@ -28,6 +28,12 @@ public class SetRotationLock : MonoBehaviour
         qd.SetLookRotation(new Vector3(0, frw.y, frw.z), Vector3.up);
         D.rotation = qd;
 
+        var right = A.rotation * Vector3.right;
+        var forward = Vector3.Cross(right, Vector3.up);
+        
+        Debug.DrawLine(A.position, A.position + right * 3, Color.green);
+        Debug.DrawLine(A.position, A.position + forward * 3, Color.white);
+        
         var qe = E.rotation;
         qe.SetLookRotation(new Vector3(0, 0, frw.z), Vector3.up);
         E.rotation = qe;
